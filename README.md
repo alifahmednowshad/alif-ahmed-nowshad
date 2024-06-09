@@ -30,7 +30,7 @@
 
 # Also more important link here
 
-1. [Visit client site git code, click here](https://github.com/muhammadnowshad/alif-ahmed-nowshad-s-portfolio).
+1. [Visit client site git code, click here](https://github.com/alifahmednowshad/portfolio).
 
 2. [Visit server site git code, click here](https://github.com/muhammadnowshad/alif-ahmed-nowshads-portfolio-server).
 
