@@ -1,32 +1,65 @@
-
-import { Link } from "react-router-dom";
 import { Menu } from "@headlessui/react";
+import {Link} from "react-scroll";
 
 const Navbar = () => {
   return (
     <nav className="bg-gray-800 p-4">
       <div className="container mx-auto flex justify-between items-center">
         <div className="text-white font-bold text-lg">
-          <Link to="/">Logo</Link>
+          <Link to="/">Alif Ahmed</Link>
         </div>
-        <div className="hidden md:flex space-x-4">
-          <Link to="/" className="text-gray-300 hover:text-white">
+        <div className="hidden md:flex space-x-10 text-lg">
+          <a href="/" className="text-gray-300 hover:text-white">
             Home
-          </Link>
-          <Link to="/about" className="text-gray-300 hover:text-white">
+          </a>
+          <Link
+            to="about"
+            spy={true}
+            smooth={true}
+            duration={500}
+            className="text-gray-300 hover:text-white"
+          >
             About
           </Link>
-          <Link to="/services" className="text-gray-300 hover:text-white">
-            Services
+          <Link
+            to="skill"
+            spy={true}
+            smooth={true}
+            duration={500}
+            className="text-gray-300 hover:text-white"
+          >
+            Skill
           </Link>
-          <Link to="/contact" className="text-gray-300 hover:text-white">
+          <Link
+            to="project"
+            spy={true}
+            smooth={true}
+            duration={500}
+            className="text-gray-300 hover:text-white"
+          >
+            Project
+          </Link>
+          <Link
+            to="blog"
+            spy={true}
+            smooth={true}
+            duration={500}
+            className="text-gray-300 hover:text-white"
+          >
+            Blog
+          </Link>
+          <Link
+            to="contact"
+            spy={true}
+            smooth={true}
+            duration={500}
+            className="text-gray-300 hover:text-white"
+          >
             Contact
           </Link>
         </div>
         <div className="hidden md:block">
-          <Link to="/login" className="text-gray-300 hover:text-white">
-            Login
-          </Link>
+          <button className="my-btn-primary">Hire Me</button>
         </div>
         <div className="md:hidden">
           <Menu>
@@ -47,7 +80,7 @@ const Navbar = () => {
               <Menu.Item>
                 {({ active }) => (
                   <Link
-                    to="/about"
+                    to="about"
                     className={`block px-4 py-2 ${active ? "bg-gray-100" : ""}`}
                   >
                     About
@@ -57,17 +90,17 @@ const Navbar = () => {
               <Menu.Item>
                 {({ active }) => (
                   <Link
-                    to="/services"
+                    to="skill"
                     className={`block px-4 py-2 ${active ? "bg-gray-100" : ""}`}
                   >
-                    Services
+                    Skill
                   </Link>
                 )}
               </Menu.Item>
               <Menu.Item>
                 {({ active }) => (
                   <Link
-                    to="/contact"
+                    to="contact"
                     className={`block px-4 py-2 ${active ? "bg-gray-100" : ""}`}
                   >
                     Contact
