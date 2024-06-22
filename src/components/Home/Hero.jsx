@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <div>
       <section
-        className="hero-section min-h-screen"
+        className="hero-section sm:min-h-screen"
         id="intro"
       >
         <div className="container mx-auto py-10">

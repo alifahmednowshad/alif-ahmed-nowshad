@@ -33,13 +33,13 @@ const Contact = () => {
   };
 
   return (
-    <div className="bg-[#050709] py-20">
+    <div className="bg-[#050709] py-10 sm:py-20">
       <ToastContainer
         position="top-center"
         autoClose={3000}
         hideProgressBar={true}
       />
-      <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 gap-10 items-center">
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         <div className="p-10 bg-[#140C1C]">
           <h2 className="title">Let{"’"}s work together!</h2>
           <p className="my-5 text-white leading-relaxed">
@@ -49,23 +49,14 @@ const Contact = () => {
           <form
             ref={form}
             onSubmit={sendEmail}
-            className="contact-form grid grid-cols-2  gap-3 rounded"
+            className="contact-form grid gap-3 rounded"
           >
-            <label className="input input-bordered flex items-center gap-2">
+            <label className=" input input-bordered flex items-center gap-2">
               <input
                 type="text"
-                name="first_name"
+                name="full_name"
                 className="grow"
-                placeholder="First name"
-                required
-              />
-            </label>
-            <label className="input input-bordered flex items-center gap-2">
-              <input
-                type="text"
-                name="last_name"
-                className="grow"
-                placeholder="Last name"
+                placeholder="Full name"
                 required
               />
             </label>
@@ -86,7 +77,7 @@ const Contact = () => {
                 placeholder="Phone number"
               />
             </label>
-            <label className="input input-bordered col-span-2 flex items-center gap-2">
+            <label className="input input-bordered  flex items-center gap-2">
               <input
                 type="text"
                 name="subject"
@@ -97,11 +88,11 @@ const Contact = () => {
             </label>
             <textarea
               name="message"
-              className="textarea textarea-bordered w-full col-span-2 h-40"
+              className="textarea textarea-bordered w-full  h-40"
               placeholder="Message"
               required
             ></textarea>
-            <button type="submit" className="my-btn-primary mt-5 col-span-2">
+            <button type="submit" className="my-btn-primary mt-5 ">
               Send Message
             </button>
           </form>

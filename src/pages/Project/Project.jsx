@@ -1,23 +1,42 @@
-import  { useState } from "react";
 import "./Project.css";
-import tortorkari from "../../assets/images/toritorkari.png"
+import tortorkari from "../../assets/images/toritorkari.png";
+import dreamfly from "../../assets/images/Dream-Fly.png";
+import bicycle from "../../assets/images/Buy-Bicycle.png";
+import { useState } from "react";
 
 const Project = () => {
   const projects = [
-    { id: 1, title: "Project 1", category: "Web Design" },
-    { id: 2, title: "Project 2", category: "Frontend", img: tortorkari },
     {
-      id: 3,
+      id: 1,
       title: "Toritorkari",
       category: "Fullstack",
+      description: "<strong>Toritorkari</strong> - Online Vegetable Marketplace <br/><strong>Front-end Technology:</strong> HTML5, CSS3, Tailwind CSS, React.js, React-Router-Dom.<br/> <strong>Back-end Technology:</strong> Node JS, Express JS, Mongo DB<br/> <strong>Tools:</strong> VS Code, Chrome-Dev tool, Github, Firebase Authentication, Vercel.",
       img: tortorkari,
       live_link: "https://toritorkari.vercel.app/",
       client_code: "https://toritorkari.vercel.app/",
       server_code: "https://toritorkari.vercel.app/",
     },
-    { id: 4, title: "Project 4", category: "Client" },
-    { id: 5, title: "Project 5", category: "Web Design" },
-    { id: 6, title: "Project 6", category: "Frontend" },
+    {
+      id: 2,
+      title: "Dream Fly",
+      category: "Frontend",
+      description:
+        "<strong>Dream Fly</strong> is a ticket booking web application.<br/><strong>Front-end Technology:</strong> HTML5, CSS3, Material UI, React.js, React-Router, React Animation.<br/><strong>Back-end Technology:</strong> Node JS, Express JS, Mongo DB, Firebase.",
+      img: dreamfly,
+      live_link: "https://wedreamfly.web.app/",
+      client_code: "https://github.com/SyedHasibRahman/DreamFly",
+      server_code: "https://github.com/SyedHasibRahman/dreamfly-server",
+    },
+    {
+      id: 2,
+      title: "Buy Bicycle",
+      category: "Web Design",
+      description: "You can sell your products online to customers. It is also user-friendly. This website is made by HTML, CSS, Javascript, React JS, MongoDB, Node JS, and Firebase.",
+      img: bicycle,
+      live_link: "https://buy-bicycle.web.app/",
+      client_code:"https://github.com/alifahmednowshad/mo74-assignment12-buy-bicycle-client-site",
+      server_code: null,
+    },
   ];
 
   const [filter, setFilter] = useState("All");
@@ -71,15 +90,17 @@ const Project = () => {
             </button>
           </div>
         </div>
-        <div className="grid grid-cols-2 justify-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 justify-center">
           {/* Display filtered projects */}
           {filteredProjects.map((project) => (
             <div key={project.id} className="p-4">
               <div className="bg-gray-200 p-4 rounded shadow">
                 <img src={project.img} alt="img" />
-                <h3 className="text-lg font-bold mb-2">{project.title}</h3>
-                <p className="text-gray-700">{project.category}</p>
-                <div className="flex gap-5">
+                <h4 className="my-4">
+                  {project.title}{" "}
+                  <span className="text-sm font-light">{project.category}</span>
+                </h4>
+                <div className="flex flex-wrap gap-2 mb-4 justify-between sm:gap-5">
                   <a
                     className="block project-btn text-primary"
                     role="button"
@@ -105,6 +126,10 @@ const Project = () => {
                     Github Server Code
                   </a>
                 </div>
+                <p
+                  className="leading-7 text-sm"
+                  dangerouslySetInnerHTML={{ __html: project.description }}
+                />
               </div>
             </div>
           ))}
@@ -115,4 +140,3 @@ const Project = () => {
 };
 
 export default Project;
-

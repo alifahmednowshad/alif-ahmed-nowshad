@@ -11,6 +11,7 @@ const Blog = () => {
               that not only inspires you but also captivates your customers.
             </p>
           </div>
+          <h2 className="mt-5">Coming Soon ...</h2>
         </div>
       </div>
     );
