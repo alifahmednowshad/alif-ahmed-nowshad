@@ -1,4 +1,28 @@
 .skill-item{
     background-color: var(--theme-accent-2);
     color: white;
+    text-align: center;
+    width: auto;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--theme-primary);
+    border-radius: 5px;
+    font-size: 1rem;
+}
+.skill-item:hover{
+    color: white;
+    border: 1px solid var(--theme-sceondary);
+      background: linear-gradient(
+    to right,
+    var(--theme-primary) 0%,
+    var(--white) 100%
+  );
+  background-clip: text;
+  font-size: x-large;
+  font-weight: bold;
+  -webkit-text-fill-color: transparent;
+  transition: .5s;
+  z-index: 1;
 }

@@ -39,8 +39,8 @@ const Contact = () => {
         autoClose={3000}
         hideProgressBar={true}
       />
-      <div className="container mx-auto flex flex-col md:flex-row items-center md:space-x-8 px-4">
-        <div className="w-3/5 md:w-1/2 p-10 bg-[#140C1C]">
+      <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 gap-10 items-center">
+        <div className="p-10 bg-[#140C1C]">
           <h2 className="title">Let{"’"}s work together!</h2>
           <p className="my-5 text-white leading-relaxed">
             I design and code beautifully simple things and I love what I do.
@@ -49,7 +49,7 @@ const Contact = () => {
           <form
             ref={form}
             onSubmit={sendEmail}
-            className="contact-form grid grid-cols-2 gap-3 rounded"
+            className="contact-form grid grid-cols-2  gap-3 rounded"
           >
             <label className="input input-bordered flex items-center gap-2">
               <input
@@ -106,28 +106,28 @@ const Contact = () => {
             </button>
           </form>
         </div>
-        <div className="w-2/5 md:w-1/2 mb-8 md:mb-0 flex flex-col gap-10">
-          <div className="flex gap-5 items-center text-white">
+        <div className="flex flex-col gap-5 p-3">
+          <div className="flex flex-col sm:flex-row gap-5 sm:items-center text-white">
             <div className="icon">
               <FiMail size={30} />
             </div>
             <div>
-              <h6 className="text-lg font-normal">Email</h6>
-              <p className="text-xl font-semi-bold">
+              <h6 className="text-md sm:text-lg font-normal">Email</h6>
+              <p className="text-lg sm:text-xl font-semi-bold">
                 alifahmednowshad@gmail.com
               </p>
-              <p className="text-xl font-semi-bold">
+              <p className="text-lg sm:text-xl font-semi-bold">
                 muhammadnowshad2020@gmail.com
               </p>
             </div>
           </div>
-          <div className="flex gap-5 items-center text-white">
+          <div className="flex flex-col sm:flex-row gap-5 sm:items-center text-white">
             <div className="icon">
               <IoLocationOutline size={30} />
             </div>
             <div>
-              <h6 className="text-lg font-normal">Location</h6>
-              <p className="text-xl font-semi-bold">
+              <h6 className="text-md sm:text-lg font-normal">Location</h6>
+              <p className="text-lg sm:text-xl font-semi-bold">
                 Kushtia, Khulna, Bangladesh
               </p>
             </div>

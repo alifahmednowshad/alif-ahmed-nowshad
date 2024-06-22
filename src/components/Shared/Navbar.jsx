@@ -1,123 +1,137 @@
-import { Menu } from "@headlessui/react";
-import {Link} from "react-scroll";
+import { Menu, MenuButton, MenuItems, MenuItem } from "@headlessui/react";
+import { Link as ScrollLink } from "react-scroll";
+import { Link as RouterLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <nav className="bg-gray-800 p-4">
       <div className="container mx-auto flex justify-between items-center">
         <div className="text-white font-bold text-lg">
-          <Link to="/">Alif Ahmed</Link>
+          <RouterLink to="/">Alif Ahmed</RouterLink>
         </div>
         <div className="hidden md:flex space-x-10 text-lg">
-          <a href="/" className="text-gray-300 hover:text-white">
+          <RouterLink to="/" className="text-gray-300 hover:text-white">
             Home
-          </a>
-          <Link
+          </RouterLink>
+          <ScrollLink
             to="about"
             spy={true}
             smooth={true}
             duration={500}
-            className="text-gray-300 hover:text-white"
+            className="cursor-pointer text-gray-300 hover:text-white"
           >
             About
-          </Link>
-          <Link
+          </ScrollLink>
+          <ScrollLink
             to="skill"
             spy={true}
             smooth={true}
             duration={500}
-            className="text-gray-300 hover:text-white"
+            className="cursor-pointer text-gray-300 hover:text-white"
           >
             Skill
-          </Link>
-          <Link
+          </ScrollLink>
+          <ScrollLink
             to="project"
             spy={true}
             smooth={true}
             duration={500}
-            className="text-gray-300 hover:text-white"
+            className="cursor-pointer text-gray-300 hover:text-white"
           >
             Project
-          </Link>
-          <Link
+          </ScrollLink>
+          <ScrollLink
             to="blog"
             spy={true}
             smooth={true}
             duration={500}
-            className="text-gray-300 hover:text-white"
+            className="cursor-pointer text-gray-300 hover:text-white"
           >
             Blog
-          </Link>
-          <Link
+          </ScrollLink>
+          <ScrollLink
             to="contact"
             spy={true}
             smooth={true}
             duration={500}
-            className="text-gray-300 hover:text-white"
+            className="cursor-pointer text-gray-300 hover:text-white"
           >
             Contact
-          </Link>
+          </ScrollLink>
         </div>
         <div className="hidden md:block">
           <button className="my-btn-primary">Hire Me</button>
         </div>
-        <div className="md:hidden">
-          <Menu>
-            <Menu.Button className="text-gray-300 hover:text-white">
+        <div className="hidden">
+          <Menu as="div" className="relative">
+            <MenuButton className="text-gray-300 hover:text-white">
               Menu
-            </Menu.Button>
-            <Menu.Items className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-              <Menu.Item>
-                {({ active }) => (
-                  <Link
-                    to="/"
-                    className={`block px-4 py-2 ${active ? "bg-gray-100" : ""}`}
-                  >
-                    Home
-                  </Link>
-                )}
-              </Menu.Item>
-              <Menu.Item>
-                {({ active }) => (
-                  <Link
-                    to="about"
-                    className={`block px-4 py-2 ${active ? "bg-gray-100" : ""}`}
-                  >
-                    About
-                  </Link>
-                )}
-              </Menu.Item>
-              <Menu.Item>
-                {({ active }) => (
-                  <Link
-                    to="skill"
-                    className={`block px-4 py-2 ${active ? "bg-gray-100" : ""}`}
-                  >
-                    Skill
-                  </Link>
-                )}
-              </Menu.Item>
-              <Menu.Item>
-                {({ active }) => (
-                  <Link
-                    to="contact"
-                    className={`block px-4 py-2 ${active ? "bg-gray-100" : ""}`}
-                  >
-                    Contact
-                  </Link>
-                )}
-              </Menu.Item>
-              <Menu.Item>
-                {({ active }) => (
-                  <Link
-                    to="/login"
-                    className={`block px-4 py-2 ${active ? "bg-gray-100" : ""}`}
-                  >
-                    Login
-                  </Link>
-                )}
-              </Menu.Item>
-            </Menu.Items>
+            </MenuButton>
+            <MenuItems className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg ">
+              <MenuItem as="div">
+                <RouterLink
+                  to="/"
+                  className="block px-4 py-2 hover:bg-gray-100"
+                >
+                  Home
+                </RouterLink>
+              </MenuItem>
+              <MenuItem as="div">
+                <ScrollLink
+                  to="about"
+                  spy={true}
+                  smooth={true}
+                  duration={500}
+                  className="block px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                >
+                  About
+                </ScrollLink>
+              </MenuItem>
+              <MenuItem as="div">
+                <ScrollLink
+                  to="skill"
+                  spy={true}
+                  smooth={true}
+                  duration={500}
+                  className="block px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                >
+                  Skill
+                </ScrollLink>
+              </MenuItem>
+              <MenuItem as="div">
+                <ScrollLink
+                  to="project"
+                  spy={true}
+                  smooth={true}
+                  duration={500}
+                  className="block px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                >
+                  Project
+                </ScrollLink>
+              </MenuItem>
+              <MenuItem as="div">
+                <ScrollLink
+                  to="blog"
+                  spy={true}
+                  smooth={true}
+                  duration={500}
+                  className="block px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                >
+                  Blog
+                </ScrollLink>
+              </MenuItem>
+              <MenuItem as="div">
+                <ScrollLink
+                  to="contact"
+                  spy={true}
+                  smooth={true}
+                  duration={500}
+                  className="block px-4 py-2 text-white hover:bg-gray-100 cursor-pointer"
+                >
+                  Contact
+                </ScrollLink>
+              </MenuItem>
+            </MenuItems>
           </Menu>
         </div>
       </div>

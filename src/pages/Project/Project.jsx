@@ -1,11 +1,20 @@
 import  { useState } from "react";
 import "./Project.css";
+import tortorkari from "../../assets/images/toritorkari.png"
 
 const Project = () => {
   const projects = [
     { id: 1, title: "Project 1", category: "Web Design" },
-    { id: 2, title: "Project 2", category: "Frontend" },
-    { id: 3, title: "Project 3", category: "Fullstack" },
+    { id: 2, title: "Project 2", category: "Frontend", img: tortorkari },
+    {
+      id: 3,
+      title: "Toritorkari",
+      category: "Fullstack",
+      img: tortorkari,
+      live_link: "https://toritorkari.vercel.app/",
+      client_code: "https://toritorkari.vercel.app/",
+      server_code: "https://toritorkari.vercel.app/",
+    },
     { id: 4, title: "Project 4", category: "Client" },
     { id: 5, title: "Project 5", category: "Web Design" },
     { id: 6, title: "Project 6", category: "Frontend" },
@@ -67,8 +76,35 @@ const Project = () => {
           {filteredProjects.map((project) => (
             <div key={project.id} className="p-4">
               <div className="bg-gray-200 p-4 rounded shadow">
+                <img src={project.img} alt="img" />
                 <h3 className="text-lg font-bold mb-2">{project.title}</h3>
                 <p className="text-gray-700">{project.category}</p>
+                <div className="flex gap-5">
+                  <a
+                    className="block project-btn text-primary"
+                    role="button"
+                    href={project.live_link}
+                    target="_blank"
+                  >
+                    Live Link
+                  </a>
+                  <a
+                    className="block project-btn text-primary"
+                    role="button"
+                    href={project.live_link}
+                    target="_blank"
+                  >
+                    Github Client Code
+                  </a>
+                  <a
+                    className="block project-btn text-primary"
+                    role="button"
+                    href={project.l_link}
+                    target="_blank"
+                  >
+                    Github Server Code
+                  </a>
+                </div>
               </div>
             </div>
           ))}

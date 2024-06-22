@@ -7,20 +7,17 @@ const Hero = () => {
   return (
     <div>
       <section
-        className="hero-section min-h-screen flex items-center"
+        className="hero-section min-h-screen"
         id="intro"
       >
-        <div className="container mx-auto">
-          <div className="row flex items-center gap-10">
-            <div className="col-md-6">
+        <div className="container mx-auto py-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-10">
+            <div className="order-last md:order-none">
               <div className="hero-content-box">
                 <p className="hero-sub-title">I am Alif</p>
                 <h1 className="title">
                   Frontend Web <br /> Developer{" "}
                 </h1>
-                <div className="hero-image-box md:hidden text-center">
-                  {/* image here  */}
-                </div>
                 <p className="des">
                   I build easy-to-use and responsive websites that make browsing
                   enjoyable for millions of people.
@@ -65,8 +62,8 @@ const Hero = () => {
                 </div>
               </div>
             </div>
-            <div className="col-md-6 hidden md:block">
-              <div className="text-center ms-20">
+            <div className="order-first md:order-none">
+              <div className="text-center md:ms-20">
                 <img className="hero-image-box" src={heroImage} alt="Photo" />
               </div>
             </div>
